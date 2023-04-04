@@ -31,14 +31,14 @@ def extract_features(wav, sr, feats='mfcc', n_fft=160, hop_length=160, n_mels=40
 
     # extract mel-spectrogram
     if feats == 'mel':
-        spect = librosa.feature.melspectrogram(wav,
+        spect = librosa.feature.melspectrogram(y=wav,
                                                sr=sr,
                                                n_fft=n_fft,
                                                hop_length=hop_length,
                                                n_mels=n_mels)
     # extract mfcc
     elif feats == 'mfcc':
-        spect = librosa.feature.mfcc(wav,
+        spect = librosa.feature.mfcc(y=wav,
                                      sr=sr,
                                      n_fft=n_fft,
                                      hop_length=hop_length,
